@@ -24,7 +24,7 @@ This is a simple Organization Profile Service built using FastAPI. The service a
 
    ```bash
    git clone git@github.com:rahiii/organization-service.git
-   cd organization-profile-service
+   cd organization-service
    ```
 
 2. **Create a virtual environment:**
