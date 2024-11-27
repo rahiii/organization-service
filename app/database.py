@@ -5,6 +5,7 @@ from sqlalchemy.orm import sessionmaker
 from dotenv import load_dotenv
 import os
 
+# Load environment variables from .env file
 load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), '.env'))
 
 DB_USER = os.getenv("DB_USER", "root")
@@ -20,3 +21,4 @@ SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 from sqlalchemy.ext.declarative import declarative_base
 Base = declarative_base()
+

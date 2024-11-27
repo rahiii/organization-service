@@ -1,48 +1,7 @@
-# Byte-compiled / optimized / DLL files
-__pycache__/
-*.py[cod]
-*.pyo
+# .gitignore
 
-# C extensions
-*.so
-
-# Virtual environment
 venv/
-
-# Environment variables file
+__pycache__/
+*.pyc
 .env
-
-# Database files
-*.db
-*.sqlite3
-
-# Logs and debug files
-*.log
-
-# OS generated files
-.DS_Store
-Thumbs.db
-
-# IDE specific files
-.idea/
-*.iml
-.vscode/
-
-# Compiled files
-*.out
-*.class
-
-# Docker-related (if used in future)
-*.dockerfile
-*.env
-
-# Python egg files
-*.egg
-*.egg-info/
-dist/
-build/
-
-# Cache files
-*.swp
-.cache/
 

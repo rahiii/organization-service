@@ -1,5 +1,6 @@
 from fastapi import FastAPI, Depends, HTTPException
 from sqlalchemy.orm import Session
+from typing import List  # Import List for Python 3.8 compatibility
 from app import models, schemas, crud
 from app.database import SessionLocal, engine
 
@@ -24,7 +25,7 @@ async def read_root():
 def create_organization(organization: schemas.OrganizationCreate, db: Session = Depends(get_db)):
     return crud.create_organization(db=db, organization=organization)
 
-@app.get("/organizations/", response_model=list[schemas.Organization], tags=["Organizations"])
+@app.get("/organizations/", response_model=List[schemas.Organization], tags=["Organizations"])  # Changed list to List
 def read_organizations(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
     organizations = crud.get_organizations(db, skip=skip, limit=limit)
     return organizations

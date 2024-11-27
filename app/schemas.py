@@ -1,27 +1,26 @@
-# app/schemas.py
-
+from typing import List, Union  # Import Union for Python 3.8 compatibility
 from pydantic import BaseModel
-from typing import Optional
 
 class OrganizationBase(BaseModel):
     name: str
-    description: Optional[str] = None
-    contact_email: Optional[str] = None
-    website_url: Optional[str] = None
-    profile_picture: Optional[str] = None  # Could be a URL or a file path
+    description: Union[str, None] = None  # Changed `|` to `Union`
+    contact_email: Union[str, None] = None
+    website_url: Union[str, None] = None
+    profile_picture: Union[str, None] = None
 
 class OrganizationCreate(OrganizationBase):
     pass
 
-class OrganizationUpdate(OrganizationBase):
-    pass
+class OrganizationUpdate(BaseModel):  # Added this class for update functionality
+    name: Union[str, None] = None
+    description: Union[str, None] = None
+    contact_email: Union[str, None] = None
+    website_url: Union[str, None] = None
+    profile_picture: Union[str, None] = None
 
-class OrganizationInDBBase(OrganizationBase):
+class Organization(OrganizationBase):
     id: int
 
     class Config:
-        orm_mode = True
-
-class Organization(OrganizationInDBBase):
-    pass
+        from_attributes = True
 
