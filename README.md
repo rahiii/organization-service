@@ -66,13 +66,18 @@ This is a simple Organization Profile Service built using FastAPI. The service a
 
 2. **Run the FastAPI application using Uvicorn:**
 
-   ```bash
-   uvicorn app.main:app --reload
-   ```
+   - Locally:
+      ```bash
+      uvicorn app.main:app --reload
+      ```
+   - On ec2 instance:
+      ```bash
+      uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+      ```
 
-3. **Open your browser and go to** `http://127.0.0.1:8000` **to see the application running.**
+3. **Open your browser and go to** `http://127.0.0.1:8000` **or** `http://<ORGANIZATION-PUBLIC-IP>:8000` **to see the application running.**
 
-4. **Access the interactive API documentation at** `http://127.0.0.1:8000/docs`.
+4. **Access the interactive API documentation at** `http://127.0.0.1:8000/docs` **or** `http://<ORGANIZATION-PUBLIC-IP>:8000/docs`.
 
 ## API Endpoints
 
